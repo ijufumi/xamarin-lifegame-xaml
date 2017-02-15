@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:XamarinLifeGameXAML" 
+		x:Class="XamarinLifeGameXAML.XamarinLifeGameXAMLPage"
+		Title="LifeGame powered by Xamarin.">
+	   <ContentPage.Resources>
+        <ResourceDictionary>
+            <GridLength x:Key="Size">50</GridLength>
+            <Style x:Key="CellStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="Black" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="30"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:LgViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+		<Grid RowSpacing="1" ColumnSpacing="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+           <local:Cell Text="{Binding Cells[0, 0].Text}" Grid.Row="0" Grid.Column="0" Style="{StaticResource CellStyle}" >
+                <local:Cell.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tapped2"/>
+                </local:Cell.GestureRecognizers>
+            </local:Cell>
+  		</Grid>
+	</ContentPage.Content>  
+</ContentPage>
