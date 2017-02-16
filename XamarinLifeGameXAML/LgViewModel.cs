@@ -10,21 +10,21 @@ namespace XamarinLifeGameXAML
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        ICommand command;
-
         public LgViewModel()
         {
-            command = new Command(CellTapped);
-            var cells = new Cell[8, 8];
+            var cells = new Cell[9 * 9];
 
-            for (int i = 0; i < 8; i++)
+            for (var i = 0; i < 9; i++)
             {
-                for (int j = 0; j < 8; j++) {
-                    cells[i, j] = new Cell { 
+                for (var j = 0; j < 9; j++)
+                {
+                    var index = (j + i * 8);
+                    cells[index] = new Cell {
                         State = 0,
                         IndexX = i,
                         IndexY = j,
-                        Text = (i + j * 8).ToString()
+                        Index =  index,
+                        Text = index.ToString()
                     };
                 }
             }
@@ -32,17 +32,10 @@ namespace XamarinLifeGameXAML
             Cells = cells;
         }
 
-        public Cell[,] Cells
+        public Cell[] Cells
         {
             get;
             private set;
-        }
-
-        public ICommand Tapped() => command;
-
-        void CellTapped(object sender)
-        {
-            Debug.WriteLine(sender);
         }
     }
 }

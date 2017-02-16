@@ -46,11 +46,58 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-           <local:Cell Text="{Binding Cells[0, 0].Text}" Grid.Row="0" Grid.Column="0" Style="{StaticResource CellStyle}" >
+            <local:Cell Text="{Binding Cells[0].Text}" Grid.Row="0" Grid.Column="0" Style="{StaticResource CellStyle}" >
                 <local:Cell.GestureRecognizers>
                     <TapGestureRecognizer Tapped="Tapped2"/>
                 </local:Cell.GestureRecognizers>
             </local:Cell>
-  		</Grid>
+		    <local:Cell Text="{Binding Cells[1].Text}" Grid.Row="0" Grid.Column="1" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[2].Text}" Grid.Row="0" Grid.Column="2" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[3].Text}" Grid.Row="0" Grid.Column="3" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[4].Text}" Grid.Row="0" Grid.Column="4" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[5].Text}" Grid.Row="0" Grid.Column="5" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[6].Text}" Grid.Row="0" Grid.Column="6" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[7].Text}" Grid.Row="0" Grid.Column="7" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[8].Text}" Grid.Row="0" Grid.Column="8" Style="{StaticResource CellStyle}" >
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+
+            <local:Cell Index="{Binding Cells[9].Index}" Grid.Row="1" Grid.Column="0" BackgroundColor="{Binding Cells[9].BackgroundColor}" >
+
+                <local:Cell.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tapped2"/>
+                </local:Cell.GestureRecognizers>
+            </local:Cell>
+        </Grid>
 	</ContentPage.Content>  
 </ContentPage>
