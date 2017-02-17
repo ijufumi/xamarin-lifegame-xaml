@@ -8,7 +8,7 @@ namespace XamarinLifeGameXAML
 {
     public class Cell : Label
     {
-        public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), (object) null, BindingMode.OneWay, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
+        public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), (object) 0, BindingMode.Default, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
 
         public Cell()
         {
@@ -51,11 +51,25 @@ namespace XamarinLifeGameXAML
                 if (this.state == 1)
                 {
                     BackgroundColor = Color.Black;
+                    TextColor = Color.White;
                 }
                 else
                 {
                     BackgroundColor = Color.White;
+                    TextColor = Color.Black;
                 }
+            }
+        }
+
+        public void ChangeState()
+        {
+            if (State == 0)
+            {
+                State = 1;
+            }
+            else
+            {
+                State = 0;
             }
         }
 

@@ -16,9 +16,10 @@ namespace XamarinLifeGameXAML
             var vm = (LgViewModel) this.BindingContext;
             Cell cell = (Cell)sender;
 
-            Debug.WriteLine(cell.Text);
-            Debug.WriteLine(vm);
-        }
+            int index = cell.Index;
 
+            Debug.WriteLine(index);
+            vm.Cells[index].ChangeState();
+        }
     }
 }
