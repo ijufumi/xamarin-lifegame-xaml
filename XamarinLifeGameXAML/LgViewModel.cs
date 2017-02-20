@@ -10,6 +10,8 @@ namespace XamarinLifeGameXAML
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private Cell[] _cells;
+
         public LgViewModel()
         {
             var cells = new Cell[9 * 9];
@@ -34,8 +36,20 @@ namespace XamarinLifeGameXAML
 
         public Cell[] Cells
         {
-            get;
-            private set;
+            get
+            {
+                var cells = new Cell[9];
+                foreach (var cell in _cells)
+                {
+                    if (cell.IndexX == 0)
+                    {
+                        cells[cell.IndexY] = cell;
+                    }
+                }
+
+                return cells;
+            }
+            private set { _cells = value; }
         }
     }
 }

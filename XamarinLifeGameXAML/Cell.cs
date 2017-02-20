@@ -9,6 +9,8 @@ namespace XamarinLifeGameXAML
     public class Cell : Label
     {
         public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), (object) 0, BindingMode.Default, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
+        public static readonly BindableProperty IndexXProperty = BindableProperty.Create("IndexX", typeof (int), typeof (Cell), (object) 0, BindingMode.Default, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexXPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
+        public static readonly BindableProperty IndexYProperty = BindableProperty.Create("IndexY", typeof (int), typeof (Cell), (object) 0, BindingMode.Default, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexYPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
 
         public Cell()
         {
@@ -38,17 +40,17 @@ namespace XamarinLifeGameXAML
             set;
         }
 
-        private int state;
+        private int _state;
         public int State
         {
             get
             {
-                return this.state;
+                return _state;
             }
             set
             {
-                this.state = value;
-                if (this.state == 1)
+                _state = value;
+                if (_state == 1)
                 {
                     BackgroundColor = Color.Black;
                     TextColor = Color.White;
@@ -75,12 +77,12 @@ namespace XamarinLifeGameXAML
 
         private static void OnIndexPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
-//            var cell = (Cell) bindable;
-//            LineBreakMode lineBreakMode = cell.LineBreakMode;
-//            if ((uint) (cell.Constraint & LayoutConstraint.VerticallyFixed) <= 0U || (lineBreakMode == LineBreakMode.CharacterWrap || lineBreakMode == LineBreakMode.WordWrap))
-//                ((VisualElement) bindable).InvalidateMeasureInternal(InvalidationTrigger.MeasureChanged);
-//            if (newvalue == null)
-//                return;
+        }
+        private static void OnIndexYPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
+        {
+        }
+        private static void OnIndexXPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
+        {
         }
     }
 }
