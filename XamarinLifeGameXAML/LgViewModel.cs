@@ -8,19 +8,19 @@ namespace XamarinLifeGameXAML
 {
     public class LgViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        private const int CellSize = 9;
 
-        private Cell[] _cells;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public LgViewModel()
         {
-            var cells = new Cell[9 * 9];
+            var cells = new Cell[CellSize * CellSize];
 
-            for (var i = 0; i < 9; i++)
+            for (var i = 0; i < CellSize; i++)
             {
-                for (var j = 0; j < 9; j++)
+                for (var j = 0; j < CellSize; j++)
                 {
-                    var index = (j + i * 8);
+                    var index = (j + i * CellSize);
                     cells[index] = new Cell {
                         State = 0,
                         IndexX = i,
@@ -34,22 +34,34 @@ namespace XamarinLifeGameXAML
             Cells = cells;
         }
 
+        public Cell[] Cells0 => GetCells(0);
+        public Cell[] Cells1 => GetCells(1);
+        public Cell[] Cells2 => GetCells(2);
+        public Cell[] Cells3 => GetCells(3);
+        public Cell[] Cells4 => GetCells(4);
+        public Cell[] Cells5 => GetCells(5);
+        public Cell[] Cells6 => GetCells(6);
+        public Cell[] Cells7 => GetCells(7);
+        public Cell[] Cells8 => GetCells(8);
+
+        private Cell[] GetCells(int colIndex)
+        {
+            var cells = new Cell[CellSize];
+            foreach (var cell in Cells)
+            {
+                if (cell.IndexX == colIndex)
+                {
+                    cells[cell.IndexY] = cell;
+                }
+            }
+
+            return cells;
+        }
+
         public Cell[] Cells
         {
-            get
-            {
-                var cells = new Cell[9];
-                foreach (var cell in _cells)
-                {
-                    if (cell.IndexX == 0)
-                    {
-                        cells[cell.IndexY] = cell;
-                    }
-                }
-
-                return cells;
-            }
-            private set { _cells = value; }
+            get;
+            private set;
         }
     }
 }

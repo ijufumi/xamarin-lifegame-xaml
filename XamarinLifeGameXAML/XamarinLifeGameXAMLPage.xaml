@@ -21,8 +21,144 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal">
-            <ListView ItemsSource="{Binding Cells}">
+        <StackLayout Orientation="Horizontal" Padding="0">
+            <ListView ItemsSource="{Binding Cells0}" IsPullToRefreshEnabled="false">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells1}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells2}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells3}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells4}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells5}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells6}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells7}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
+                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
+                                            BackgroundColor="{Binding BackgroundColor}">
+                                    <local:Cell.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Tapped2"/>
+                                    </local:Cell.GestureRecognizers>
+                                </local:Cell>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView ItemsSource="{Binding Cells8}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
