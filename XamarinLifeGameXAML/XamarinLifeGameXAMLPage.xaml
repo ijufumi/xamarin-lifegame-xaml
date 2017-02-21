@@ -9,7 +9,7 @@
         <ResourceDictionary>
             <GridLength x:Key="Size">50</GridLength>
             <Style x:Key="CellStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="30"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
                 <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
                 <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
             </Style>
@@ -21,162 +21,6 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal" Padding="0">
-            <ListView ItemsSource="{Binding Cells0}" IsPullToRefreshEnabled="false">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells1}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells2}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells3}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells4}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells5}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells6}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells7}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView ItemsSource="{Binding Cells8}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <local:Cell Style="{StaticResource CellStyle}" Text="{Binding Text}"
-                                            Index="{Binding Index}" TextColor="{Binding TextColor}"
-                                            BackgroundColor="{Binding BackgroundColor}">
-                                    <local:Cell.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="Tapped2"/>
-                                    </local:Cell.GestureRecognizers>
-                                </local:Cell>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-        <!--
 		<Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Gray">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -201,6 +45,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
+            <!-- LINE:0 -->
             <local:Cell Text="{Binding Cells[0].Text}" Index="{Binding Cells[0].Index}" Grid.Row="0" Grid.Column="0"
                 Style="{StaticResource CellStyle}" TextColor="{Binding Cells[0].TextColor}"
                 BackgroundColor="{Binding Cells[0].BackgroundColor}">
@@ -265,6 +110,7 @@
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
 
+		    <!-- LINE:1 -->
             <local:Cell Text="{Binding Cells[9].Text}" Index="{Binding Cells[9].Index}" Grid.Row="1" Grid.Column="0"
                         Style="{StaticResource CellStyle}" TextColor="{Binding Cells[9].TextColor}"
                         BackgroundColor="{Binding Cells[9].BackgroundColor}">
@@ -329,70 +175,460 @@
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
 
-		    <local:Cell Text="{Binding Cells[18].Text}" Index="{Binding Cells[18].Index}" Grid.Row="1" Grid.Column="0"
+		    <!-- LINE:2 -->
+		    <local:Cell Text="{Binding Cells[18].Text}" Index="{Binding Cells[18].Index}" Grid.Row="2" Grid.Column="0"
 		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[18].TextColor}"
 		                BackgroundColor="{Binding Cells[18].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[19].Text}" Index="{Binding Cells[19].Index}" Grid.Row="1" Grid.Column="1"
+		    <local:Cell Text="{Binding Cells[19].Text}" Index="{Binding Cells[19].Index}" Grid.Row="2" Grid.Column="1"
 		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[19].TextColor}"
-		                BackgroundColor="{Binding Cells[10].BackgroundColor}">
+		                BackgroundColor="{Binding Cells[19].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[20].Text}" Index="{Binding Cells[20].Index}" Grid.Row="1" Grid.Column="2"
+		    <local:Cell Text="{Binding Cells[20].Text}" Index="{Binding Cells[20].Index}" Grid.Row="2" Grid.Column="2"
 		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[20].TextColor}"
-		                BackgroundColor="{Binding Cells[11].BackgroundColor}">
+		                BackgroundColor="{Binding Cells[20].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[21].Text}" Index="{Binding Cells[21].Index}" Grid.Row="1" Grid.Column="3"
+		    <local:Cell Text="{Binding Cells[21].Text}" Index="{Binding Cells[21].Index}" Grid.Row="2" Grid.Column="3"
 		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[21].TextColor}"
-		                BackgroundColor="{Binding Cells[12].BackgroundColor}">
+		                BackgroundColor="{Binding Cells[21].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[22].Text}" Index="{Binding Cells[22].Index}" Grid.Row="1" Grid.Column="4"
+		    <local:Cell Text="{Binding Cells[22].Text}" Index="{Binding Cells[22].Index}" Grid.Row="2" Grid.Column="4"
 		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[22].TextColor}"
 		                BackgroundColor="{Binding Cells[22].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[23].Text}" Index="{Binding Cells[23].Index}" Grid.Row="1" Grid.Column="5"
+		    <local:Cell Text="{Binding Cells[23].Text}" Index="{Binding Cells[23].Index}" Grid.Row="2" Grid.Column="5"
 		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[23].TextColor}"
 		                BackgroundColor="{Binding Cells[23].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[15].Text}" Index="{Binding Cells[15].Index}" Grid.Row="1" Grid.Column="6"
-		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[15].TextColor}"
-		                BackgroundColor="{Binding Cells[15].BackgroundColor}">
+		    <local:Cell Text="{Binding Cells[24].Text}" Index="{Binding Cells[24].Index}" Grid.Row="2" Grid.Column="6"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[24].TextColor}"
+		                BackgroundColor="{Binding Cells[24].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[16].Text}" Index="{Binding Cells[16].Index}" Grid.Row="1" Grid.Column="7"
-		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[16].TextColor}"
-		                BackgroundColor="{Binding Cells[16].BackgroundColor}">
+		    <local:Cell Text="{Binding Cells[25].Text}" Index="{Binding Cells[25].Index}" Grid.Row="2" Grid.Column="7"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[25].TextColor}"
+		                BackgroundColor="{Binding Cells[25].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
-		    <local:Cell Text="{Binding Cells[17].Text}" Index="{Binding Cells[17].Index}" Grid.Row="1" Grid.Column="8"
-		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[17].TextColor}"
-		                BackgroundColor="{Binding Cells[17].BackgroundColor}">
+		    <local:Cell Text="{Binding Cells[26].Text}" Index="{Binding Cells[26].Index}" Grid.Row="2" Grid.Column="8"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[26].TextColor}"
+		                BackgroundColor="{Binding Cells[26].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+
+		    <!-- LINE:3 -->
+		    <local:Cell Text="{Binding Cells[27].Text}" Index="{Binding Cells[27].Index}" Grid.Row="3" Grid.Column="0"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[27].TextColor}"
+		                BackgroundColor="{Binding Cells[27].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[28].Text}" Index="{Binding Cells[28].Index}" Grid.Row="3" Grid.Column="1"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[19].TextColor}"
+		                BackgroundColor="{Binding Cells[28].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[29].Text}" Index="{Binding Cells[29].Index}" Grid.Row="3" Grid.Column="2"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[29].TextColor}"
+		                BackgroundColor="{Binding Cells[29].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[30].Text}" Index="{Binding Cells[30].Index}" Grid.Row="3" Grid.Column="3"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[30].TextColor}"
+		                BackgroundColor="{Binding Cells[30].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[31].Text}" Index="{Binding Cells[31].Index}" Grid.Row="3" Grid.Column="4"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[31].TextColor}"
+		                BackgroundColor="{Binding Cells[31].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[32].Text}" Index="{Binding Cells[32].Index}" Grid.Row="3" Grid.Column="5"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[32].TextColor}"
+		                BackgroundColor="{Binding Cells[32].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[33].Text}" Index="{Binding Cells[33].Index}" Grid.Row="3" Grid.Column="6"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[33].TextColor}"
+		                BackgroundColor="{Binding Cells[33].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[34].Text}" Index="{Binding Cells[34].Index}" Grid.Row="3" Grid.Column="7"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[34].TextColor}"
+		                BackgroundColor="{Binding Cells[34].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[35].Text}" Index="{Binding Cells[35].Index}" Grid.Row="3" Grid.Column="8"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[35].TextColor}"
+		                BackgroundColor="{Binding Cells[35].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+
+            <!-- LINE:4 -->
+		    <local:Cell Text="{Binding Cells[36].Text}" Index="{Binding Cells[36].Index}" Grid.Row="4" Grid.Column="0"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[36].TextColor}"
+		                BackgroundColor="{Binding Cells[36].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[37].Text}" Index="{Binding Cells[37].Index}" Grid.Row="4" Grid.Column="1"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[37].TextColor}"
+		                BackgroundColor="{Binding Cells[37].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[38].Text}" Index="{Binding Cells[38].Index}" Grid.Row="4" Grid.Column="2"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[38].TextColor}"
+		                BackgroundColor="{Binding Cells[38].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[39].Text}" Index="{Binding Cells[39].Index}" Grid.Row="4" Grid.Column="3"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[39].TextColor}"
+		                BackgroundColor="{Binding Cells[39].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[40].Text}" Index="{Binding Cells[40].Index}" Grid.Row="4" Grid.Column="4"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[40].TextColor}"
+		                BackgroundColor="{Binding Cells[40].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[41].Text}" Index="{Binding Cells[41].Index}" Grid.Row="4" Grid.Column="5"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[41].TextColor}"
+		                BackgroundColor="{Binding Cells[41].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[42].Text}" Index="{Binding Cells[42].Index}" Grid.Row="4" Grid.Column="6"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[42].TextColor}"
+		                BackgroundColor="{Binding Cells[42].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[43].Text}" Index="{Binding Cells[43].Index}" Grid.Row="4" Grid.Column="7"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[43].TextColor}"
+		                BackgroundColor="{Binding Cells[43].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[44].Text}" Index="{Binding Cells[44].Index}" Grid.Row="4" Grid.Column="8"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[44].TextColor}"
+		                BackgroundColor="{Binding Cells[44].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+
+            <!-- LINE:5 -->
+		    <local:Cell Text="{Binding Cells[45].Text}" Index="{Binding Cells[45].Index}" Grid.Row="5" Grid.Column="0"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[45].TextColor}"
+		                BackgroundColor="{Binding Cells[45].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[46].Text}" Index="{Binding Cells[46].Index}" Grid.Row="5" Grid.Column="1"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[46].TextColor}"
+		                BackgroundColor="{Binding Cells[46].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[47].Text}" Index="{Binding Cells[47].Index}" Grid.Row="5" Grid.Column="2"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[47].TextColor}"
+		                BackgroundColor="{Binding Cells[47].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[48].Text}" Index="{Binding Cells[48].Index}" Grid.Row="5" Grid.Column="3"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[48].TextColor}"
+		                BackgroundColor="{Binding Cells[48].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[49].Text}" Index="{Binding Cells[49].Index}" Grid.Row="5" Grid.Column="4"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[49].TextColor}"
+		                BackgroundColor="{Binding Cells[49].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[50].Text}" Index="{Binding Cells[50].Index}" Grid.Row="5" Grid.Column="5"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[50].TextColor}"
+		                BackgroundColor="{Binding Cells[50].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[51].Text}" Index="{Binding Cells[51].Index}" Grid.Row="5" Grid.Column="6"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[51].TextColor}"
+		                BackgroundColor="{Binding Cells[51].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[52].Text}" Index="{Binding Cells[52].Index}" Grid.Row="5" Grid.Column="7"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[52].TextColor}"
+		                BackgroundColor="{Binding Cells[52].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[53].Text}" Index="{Binding Cells[53].Index}" Grid.Row="5" Grid.Column="8"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[53].TextColor}"
+		                BackgroundColor="{Binding Cells[53].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+
+            <!-- LINE:6 -->
+	 	    <local:Cell Text="{Binding Cells[54].Text}" Index="{Binding Cells[54].Index}" Grid.Row="6" Grid.Column="0"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[54].TextColor}"
+		                BackgroundColor="{Binding Cells[54].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[55].Text}" Index="{Binding Cells[55].Index}" Grid.Row="6" Grid.Column="1"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[55].TextColor}"
+		                BackgroundColor="{Binding Cells[55].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[56].Text}" Index="{Binding Cells[56].Index}" Grid.Row="6" Grid.Column="2"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[56].TextColor}"
+		                BackgroundColor="{Binding Cells[56].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[57].Text}" Index="{Binding Cells[57].Index}" Grid.Row="6" Grid.Column="3"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[57].TextColor}"
+		                BackgroundColor="{Binding Cells[57].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[58].Text}" Index="{Binding Cells[58].Index}" Grid.Row="6" Grid.Column="4"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[58].TextColor}"
+		                BackgroundColor="{Binding Cells[58].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[59].Text}" Index="{Binding Cells[59].Index}" Grid.Row="6" Grid.Column="5"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[59].TextColor}"
+		                BackgroundColor="{Binding Cells[59].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[60].Text}" Index="{Binding Cells[60].Index}" Grid.Row="6" Grid.Column="6"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[60].TextColor}"
+		                BackgroundColor="{Binding Cells[60].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[61].Text}" Index="{Binding Cells[61].Index}" Grid.Row="6" Grid.Column="7"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[61].TextColor}"
+		                BackgroundColor="{Binding Cells[61].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[62].Text}" Index="{Binding Cells[62].Index}" Grid.Row="6" Grid.Column="8"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[62].TextColor}"
+		                BackgroundColor="{Binding Cells[62].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+
+            <!-- LINE:7 -->
+		    <local:Cell Text="{Binding Cells[63].Text}" Index="{Binding Cells[63].Index}" Grid.Row="7" Grid.Column="0"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[63].TextColor}"
+		                BackgroundColor="{Binding Cells[63].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[64].Text}" Index="{Binding Cells[64].Index}" Grid.Row="7" Grid.Column="1"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[64].TextColor}"
+		                BackgroundColor="{Binding Cells[64].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[65].Text}" Index="{Binding Cells[65].Index}" Grid.Row="7" Grid.Column="2"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[65].TextColor}"
+		                BackgroundColor="{Binding Cells[65].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[66].Text}" Index="{Binding Cells[66].Index}" Grid.Row="7" Grid.Column="3"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[66].TextColor}"
+		                BackgroundColor="{Binding Cells[66].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[67].Text}" Index="{Binding Cells[67].Index}" Grid.Row="7" Grid.Column="4"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[67].TextColor}"
+		                BackgroundColor="{Binding Cells[67].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[68].Text}" Index="{Binding Cells[68].Index}" Grid.Row="7" Grid.Column="5"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[68].TextColor}"
+		                BackgroundColor="{Binding Cells[68].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[69].Text}" Index="{Binding Cells[69].Index}" Grid.Row="7" Grid.Column="6"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[69].TextColor}"
+		                BackgroundColor="{Binding Cells[69].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[70].Text}" Index="{Binding Cells[70].Index}" Grid.Row="7" Grid.Column="7"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[70].TextColor}"
+		                BackgroundColor="{Binding Cells[70].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[71].Text}" Index="{Binding Cells[71].Index}" Grid.Row="7" Grid.Column="8"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[71].TextColor}"
+		                BackgroundColor="{Binding Cells[71].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+
+		    <!-- LINE:8 -->
+		    <local:Cell Text="{Binding Cells[72].Text}" Index="{Binding Cells[72].Index}" Grid.Row="8" Grid.Column="0"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[72].TextColor}"
+		                BackgroundColor="{Binding Cells[72].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[73].Text}" Index="{Binding Cells[73].Index}" Grid.Row="8" Grid.Column="1"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[73].TextColor}"
+		                BackgroundColor="{Binding Cells[73].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[74].Text}" Index="{Binding Cells[74].Index}" Grid.Row="8" Grid.Column="2"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[74].TextColor}"
+		                BackgroundColor="{Binding Cells[74].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[75].Text}" Index="{Binding Cells[75].Index}" Grid.Row="8" Grid.Column="3"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[75].TextColor}"
+		                BackgroundColor="{Binding Cells[75].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[76].Text}" Index="{Binding Cells[76].Index}" Grid.Row="8" Grid.Column="4"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[76].TextColor}"
+		                BackgroundColor="{Binding Cells[76].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[77].Text}" Index="{Binding Cells[77].Index}" Grid.Row="8" Grid.Column="5"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[77].TextColor}"
+		                BackgroundColor="{Binding Cells[77].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[78].Text}" Index="{Binding Cells[78].Index}" Grid.Row="8" Grid.Column="6"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[78].TextColor}"
+		                BackgroundColor="{Binding Cells[78].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[79].Text}" Index="{Binding Cells[79].Index}" Grid.Row="8" Grid.Column="7"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[79].TextColor}"
+		                BackgroundColor="{Binding Cells[79].BackgroundColor}">
+		        <local:Cell.GestureRecognizers>
+		            <TapGestureRecognizer Tapped="Tapped2"/>
+		        </local:Cell.GestureRecognizers>
+		    </local:Cell>
+		    <local:Cell Text="{Binding Cells[80].Text}" Index="{Binding Cells[80].Index}" Grid.Row="8" Grid.Column="8"
+		                Style="{StaticResource CellStyle}" TextColor="{Binding Cells[80].TextColor}"
+		                BackgroundColor="{Binding Cells[80].BackgroundColor}">
 		        <local:Cell.GestureRecognizers>
 		            <TapGestureRecognizer Tapped="Tapped2"/>
 		        </local:Cell.GestureRecognizers>
 		    </local:Cell>
         </Grid>
-        -->
-	</ContentPage.Content>  
+	</ContentPage.Content>
 </ContentPage>
