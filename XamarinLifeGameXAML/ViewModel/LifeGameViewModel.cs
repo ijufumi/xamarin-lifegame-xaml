@@ -2,8 +2,9 @@
 using System.Diagnostics;
 using Prism.Commands;
 using Prism.Mvvm;
+using XamarinLifeGameXAML.Logic;
 
-namespace XamarinLifeGameXAML
+namespace XamarinLifeGameXAML.ViewModel
 {
     public class LgViewModel : BindableBase
     {

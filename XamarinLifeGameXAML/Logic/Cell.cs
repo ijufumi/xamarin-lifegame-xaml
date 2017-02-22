@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform;
 
-namespace XamarinLifeGameXAML
+namespace XamarinLifeGameXAML.Logic
 {
     public class Cell : Label
     {

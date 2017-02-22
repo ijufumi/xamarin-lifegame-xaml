@@ -5,7 +5,7 @@
 		xmlns:local="clr-namespace:XamarinLifeGameXAML"
         xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
         prism:ViewModelLocator.AutowireViewModel="True"
-		x:Class="XamarinLifeGameXAML.XamarinLifeGameXAMLPage"
+		x:Class="XamarinLifeGameXAML.View.LifeGame"
 		Title="LifeGame powered by Xamarin.">
     <ContentPage.Content>
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">

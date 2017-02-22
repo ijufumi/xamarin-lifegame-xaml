@@ -1,6 +1,7 @@
 ﻿using System;
 using Prism.Unity;
 using Xamarin.Forms;
+using XamarinLifeGameXAML.View;
 
 namespace XamarinLifeGameXAML
 {
@@ -14,7 +15,7 @@ namespace XamarinLifeGameXAML
         {
             InitializeComponent();
 
-            MainPage = new XamarinLifeGameXAMLPage();
+            MainPage = new LifeGame();
         }
 
         protected override void RegisterTypes()
