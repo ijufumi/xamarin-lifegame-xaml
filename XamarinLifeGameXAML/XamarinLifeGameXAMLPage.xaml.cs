@@ -8,11 +8,10 @@ namespace XamarinLifeGameXAML
     {
         private const int CellSize = 9;
 
-        private Cell[] _cells;
-
         public XamarinLifeGameXAMLPage()
         {
             InitializeComponent();
+
 
             var RowDefinitions = new RowDefinition[CellSize];
             var RowCollections = new RowDefinitionCollection();
@@ -34,7 +33,7 @@ namespace XamarinLifeGameXAML
             CellGrid.ColumnDefinitions = ColumnCollections;
             CellGrid.Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0);
 
-            _cells = new Cell[CellSize * CellSize];
+            var _cells = new Cell[CellSize * CellSize];
             var tgr = new TapGestureRecognizer();
             tgr.Tapped += (sender, e) => CellClicked(sender, e);
 
@@ -57,6 +56,9 @@ namespace XamarinLifeGameXAML
                     CellGrid.Children.Add(_cells[index], i, j);
                 }
             }
+
+            var viewModel = (LgViewModel) this.BindingContext;
+            viewModel.Cells = _cells;
         }
 
         public void CellClicked(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace XamarinLifeGameXAML
             var index = cell.Index;
 
             Debug.WriteLine(index);
-            _cells[index].ChangeState();
+            vm.Cells[index].ChangeState();
         }
     }
 }

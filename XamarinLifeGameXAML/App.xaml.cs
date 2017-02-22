@@ -1,14 +1,25 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Prism.Unity;
+using Xamarin.Forms;
 
 namespace XamarinLifeGameXAML
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App(IPlatformInitializer initializer = null) : base(initializer)
+        {
+        }
+
+        protected override void OnInitialized()
         {
             InitializeComponent();
 
             MainPage = new XamarinLifeGameXAMLPage();
+        }
+
+        protected override void RegisterTypes()
+        {
+            // TODO
         }
 
         protected override void OnStart()
