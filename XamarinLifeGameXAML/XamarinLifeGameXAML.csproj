@@ -28,7 +28,7 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="View\LifeGame.xaml" />
+    <EmbeddedResource Include="Views\LifeGame.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -36,8 +36,8 @@
     </Compile>
     <Compile Include="Logic\Cell.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\LifeGameViewModel.cs" />
-    <Compile Include="View\LifeGame.xaml.cs">
+    <Compile Include="ViewModels\LifeGameViewModel.cs" />
+    <Compile Include="Views\LifeGame.xaml.cs">
       <DependentUpon>XamarinLifeGameXAMLPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>

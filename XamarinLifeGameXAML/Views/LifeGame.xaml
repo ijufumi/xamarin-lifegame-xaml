@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+        xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+        prism:ViewModelLocator.AutowireViewModel="True"
+		x:Class="XamarinLifeGameXAML.Views.LifeGame"
+		Title="LifeGame powered by Xamarin.">
+
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Label Text="Life Game" BackgroundColor="White" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+        <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Gray" x:Name="CellGrid"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="START" WidthRequest="100" BackgroundColor="Blue" Command="{Binding StartCommand}"/>
+            <Button Text="STOP" WidthRequest="100" BackgroundColor="Red" Command="{Binding StopCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

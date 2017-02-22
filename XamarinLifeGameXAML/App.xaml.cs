@@ -1,7 +1,7 @@
 ﻿using System;
 using Prism.Unity;
 using Xamarin.Forms;
-using XamarinLifeGameXAML.View;
+using XamarinLifeGameXAML.Views;
 
 namespace XamarinLifeGameXAML
 {
@@ -14,28 +14,14 @@ namespace XamarinLifeGameXAML
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-            MainPage = new LifeGame();
+            NavigationService.NavigateAsync("NavigationPage/LifeGame");
+            //MainPage = new LifeGame();
         }
 
         protected override void RegisterTypes()
         {
-            // TODO
-        }
-
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
+            this.Container.RegisterTypeForNavigation<LifeGame>();
+            this.Container.RegisterTypeForNavigation<NavigationPage>();
         }
     }
 }

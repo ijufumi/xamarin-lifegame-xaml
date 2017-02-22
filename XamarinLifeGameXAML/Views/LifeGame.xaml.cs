@@ -2,14 +2,15 @@
 using System.Diagnostics;
 using Xamarin.Forms;
 using XamarinLifeGameXAML.Logic;
-using XamarinLifeGameXAML.ViewModel;
+using XamarinLifeGameXAML.ViewModels;
 
-namespace XamarinLifeGameXAML.View
+namespace XamarinLifeGameXAML.Views
 {
     public partial class LifeGame : ContentPage
     {
         private const int CellSize = 9;
 
+        private Logic.Cell[] _cells;
         public LifeGame()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace XamarinLifeGameXAML.View
             CellGrid.ColumnDefinitions = ColumnCollections;
             CellGrid.Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0);
 
-            var _cells = new Logic.Cell[CellSize * CellSize];
+            _cells = new Logic.Cell[CellSize * CellSize];
             var tgr = new TapGestureRecognizer();
             tgr.Tapped += (sender, e) => CellClicked(sender, e);
 
@@ -59,19 +60,20 @@ namespace XamarinLifeGameXAML.View
                 }
             }
 
-            var viewModel = (LgViewModel) this.BindingContext;
+            var viewModel = (LifeGameViewModel) this.BindingContext;
             viewModel.Cells = _cells;
         }
 
         public void CellClicked(object sender, EventArgs e)
         {
-            var vm = (LgViewModel) this.BindingContext;
+            var vm = (LifeGameViewModel) this.BindingContext;
             var cell = (Logic.Cell)sender;
 
             var index = cell.Index;
 
             Debug.WriteLine(index);
-            vm.Cells[index].ChangeState();
+            Debug.WriteLine(vm);
+            _cells[index].ChangeState();
         }
     }
 }
