@@ -53,7 +53,7 @@ namespace XamarinLifeGameXAML.ViewModels
             if (IsExecuted)
             {
                 IsExecuted = false;
-                await StartGame();
+                await Task.Run(UpdateCellsAsync);
             }
             else
             {
@@ -63,20 +63,10 @@ namespace XamarinLifeGameXAML.ViewModels
 
         private async Task StartGame()
         {
-            var token = new CancellationToken();
-            await Task.Run(async () =>
-            {
-                token.ThrowIfCancellationRequested();
-
-                await Task.Delay(1000, token);
-                while (isExecuted)
-                {
-                    await UpdateCellsAsync();
-                }
-            }, token);
+            await UpdateCellsAsync();
         }
 
-        private Task UpdateCellsAsync()
+        private async Task UpdateCellsAsync()
         {
             var tcs = new TaskCompletionSource<object>();
             Device.BeginInvokeOnMainThread(() =>
@@ -91,7 +81,6 @@ namespace XamarinLifeGameXAML.ViewModels
                     tcs.SetException(e);
                 }
             });
-            return tcs.Task;
         }
 
         private void UpdateCells()
