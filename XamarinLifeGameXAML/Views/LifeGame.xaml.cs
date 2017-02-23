@@ -8,25 +8,23 @@ namespace XamarinLifeGameXAML.Views
 {
     public partial class LifeGame : ContentPage
     {
-        private const int CellSize = 9;
-
-        private Logic.Cell[] _cells;
+        private readonly Logic.Cell[] _cells;
         public LifeGame()
         {
             InitializeComponent();
 
 
-            var RowDefinitions = new RowDefinition[CellSize];
+            var RowDefinitions = new RowDefinition[CellUtils.CellSize];
             var RowCollections = new RowDefinitionCollection();
-            for (var i = 0; i < CellSize; i++)
+            for (var i = 0; i < CellUtils.CellSize; i++)
             {
                 RowDefinitions[i] = new RowDefinition { Height = GridLength.Star};
                 RowCollections.Add(RowDefinitions[i]);
             }
 
-            var ColumnDefinitions = new ColumnDefinition[CellSize];
+            var ColumnDefinitions = new ColumnDefinition[CellUtils.CellSize];
             var ColumnCollections = new ColumnDefinitionCollection();
-            for (var i = 0; i < CellSize; i++)
+            for (var i = 0; i < CellUtils.CellSize; i++)
             {
                 ColumnDefinitions[i] = new ColumnDefinition { Width = GridLength.Star };
                 ColumnCollections.Add(ColumnDefinitions[i]);
@@ -36,15 +34,15 @@ namespace XamarinLifeGameXAML.Views
             CellGrid.ColumnDefinitions = ColumnCollections;
             CellGrid.Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0);
 
-            _cells = new Logic.Cell[CellSize * CellSize];
+            _cells = new Logic.Cell[CellUtils.CellSize * CellUtils.CellSize];
             var tgr = new TapGestureRecognizer();
             tgr.Tapped += CellClicked;
 
-            for (var i = 0; i < CellSize; i++)
+            for (var i = 0; i < CellUtils.CellSize; i++)
             {
-                for (var j = 0; j < CellSize; j++)
+                for (var j = 0; j < CellUtils.CellSize; j++)
                 {
-                    var index = (j + i * CellSize);
+                    var index = (j + i * CellUtils.CellSize);
                     _cells[index] = new Logic.Cell {
                         State = 0,
                         IndexX = i,
@@ -70,9 +68,6 @@ namespace XamarinLifeGameXAML.Views
             var cell = (Logic.Cell)sender;
 
             var index = cell.Index;
-
-            Debug.WriteLine(index);
-            Debug.WriteLine(vm);
             _cells[index].ChangeState();
         }
     }

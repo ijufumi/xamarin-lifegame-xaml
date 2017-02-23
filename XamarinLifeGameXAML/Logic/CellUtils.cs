@@ -4,11 +4,14 @@ namespace XamarinLifeGameXAML.Logic
 {
     public class CellUtils
     {
-        public const int CellSize = 9;
-
         public static int GetIndex(Tuple<int, int> point)
         {
-            return (point.Item2 + point.Item1 * CellSize);
+            return GetIndex(point.Item1, point.Item2);
+        }
+
+        public static int GetIndex(int x, int y)
+        {
+            return (y + x * CellSize);
         }
 
         public static Tuple<int, int> GetPoint(int index)
@@ -18,5 +21,9 @@ namespace XamarinLifeGameXAML.Logic
 
             return Tuple.Create(x, y);
         }
+
+        public static int CellSize => 9;
+
+        public static int ArraySize => CellSize * CellSize;
     }
 }

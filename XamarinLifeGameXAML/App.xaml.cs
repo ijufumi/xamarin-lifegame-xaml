@@ -14,14 +14,12 @@ namespace XamarinLifeGameXAML
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync("NavigationPage/LifeGame");
-            //MainPage = new LifeGame();
+            NavigationService.NavigateAsync("LifeGame");
         }
 
         protected override void RegisterTypes()
         {
             this.Container.RegisterTypeForNavigation<LifeGame>();
-            this.Container.RegisterTypeForNavigation<NavigationPage>();
         }
     }
 }
