@@ -12,21 +12,25 @@ namespace XamarinLifeGameXAML.ViewModels
         public LifeGameViewModel()
         {
             this.StartCommand = new DelegateCommand(
-                    executeMethod: async () => await ControlGame(),
-                    canExecuteMethod: () => !IsExecuted
+                    async () => await ControlGame(),
+                    () => !IsExecuted
             )
-            .ObservesProperty(propertyExpression: () => IsExecuted);
+            .ObservesProperty(() => IsExecuted);
 
             this.StopCommand = new DelegateCommand(
-                    executeMethod: async () => await ControlGame(),
-                    canExecuteMethod: () => IsExecuted
+                    async () => await ControlGame(),
+                    () => IsExecuted
                 )
-                .ObservesProperty(propertyExpression: () => IsExecuted);
+                .ObservesProperty(() => IsExecuted);
 
 
         }
 
         private bool isExecuted;
+        /*
+         * DelegateCommandでは、プロパティじゃないとエラーで落ちるので、
+         * 単純なものでも要プロパティ。
+         */
         public bool IsExecuted
         {
             get { return this.isExecuted; }

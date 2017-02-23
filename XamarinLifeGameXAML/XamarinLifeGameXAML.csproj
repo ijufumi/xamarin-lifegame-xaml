@@ -8,8 +8,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>XamarinLifeGameXAML</RootNamespace>
     <AssemblyName>XamarinLifeGameXAML</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +35,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logic\Cell.cs" />
+    <Compile Include="Logic\CellUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LifeGameViewModel.cs" />
     <Compile Include="Views\LifeGame.xaml.cs">

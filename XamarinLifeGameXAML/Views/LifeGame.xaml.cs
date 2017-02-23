@@ -38,7 +38,7 @@ namespace XamarinLifeGameXAML.Views
 
             _cells = new Logic.Cell[CellSize * CellSize];
             var tgr = new TapGestureRecognizer();
-            tgr.Tapped += (sender, e) => CellClicked(sender, e);
+            tgr.Tapped += CellClicked;
 
             for (var i = 0; i < CellSize; i++)
             {
