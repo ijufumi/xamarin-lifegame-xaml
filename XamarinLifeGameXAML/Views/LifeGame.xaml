@@ -7,7 +7,7 @@
 		x:Class="XamarinLifeGameXAML.Views.LifeGame"
 		Title="LifeGame powered by Xamarin.">
 
-    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <Label Text="Life Game" BackgroundColor="White" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
         <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Gray" x:Name="CellGrid"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
