@@ -48,7 +48,7 @@ namespace XamarinLifeGameXAML.Views
                         IndexX = i,
                         IndexY = j,
                         Index =  index,
-                        Text = index.ToString(),
+                        // Text = index.ToString(),
                         FontSize = 20,
                         HorizontalTextAlignment = TextAlignment.Center,
                         VerticalTextAlignment = TextAlignment.Center,

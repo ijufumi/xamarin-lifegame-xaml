@@ -15,13 +15,13 @@ namespace XamarinLifeGameXAML.ViewModels
 
         public LifeGameViewModel()
         {
-            this.StartCommand = new DelegateCommand(
+            StartCommand = new DelegateCommand(
                     async () => await ControlGame(),
                     () => !IsExecuted
             )
             .ObservesProperty(() => IsExecuted);
 
-            this.StopCommand = new DelegateCommand(
+            StopCommand = new DelegateCommand(
                     async () => await ControlGame(),
                     () => IsExecuted
                 )
@@ -31,14 +31,13 @@ namespace XamarinLifeGameXAML.ViewModels
         }
 
         private bool isExecuted;
-        /*
-         * DelegateCommandでは、プロパティじゃないとエラーで落ちるので、
-         * 単純なものでも要プロパティ。
-         */
+
+        // DelegateCommandでは、プロパティじゃないとエラーで落ちるので、
+        // 単純なものでも要プロパティ。
         public bool IsExecuted
         {
-            get { return this.isExecuted; }
-            set { SetProperty(ref this.isExecuted, value); }
+            get { return isExecuted; }
+            set { SetProperty(ref isExecuted, value); }
         }
 
         public DelegateCommand StartCommand { get; }
@@ -47,56 +46,52 @@ namespace XamarinLifeGameXAML.ViewModels
 
         public Cell[] Cells { get; set; }
 
+        // START/STOPボタンから実行されるメソッド。
         private async Task ControlGame()
         {
             Debug.WriteLine("Call ControlGame : " + IsExecuted);
-            if (IsExecuted)
+            if (!IsExecuted)
             {
-                IsExecuted = false;
-                await Task.Run(UpdateCellsAsync);
+                IsExecuted = true;
+                // awaitすると処理を待つので、asyncで処理を実行する
+                await Task.Run(async () =>
+                {
+                    while (IsExecuted)
+                    {
+                        UpdateCells();
+                        await Task.Delay(100);
+                    }
+                });
             }
             else
             {
-                IsExecuted = true;
+                IsExecuted = false;
             }
         }
 
-        private async Task StartGame()
+        // Cellの更新を行う
+        private void UpdateCells()
         {
-            await UpdateCellsAsync();
-        }
-
-        private async Task UpdateCellsAsync()
-        {
-            var tcs = new TaskCompletionSource<object>();
+            // UIスレッドからじゃないと、UIの更新ができないので
             Device.BeginInvokeOnMainThread(() =>
             {
-                try
+                var temp = (Cell[]) Cells.Clone();
+                for (var i = 0; i < CellUtils.CellSize; i++)
                 {
-                    UpdateCells();
-                    tcs.SetResult(null);
+                    for (var j = 0; j < CellUtils.CellSize; j++)
+                    {
+                        temp[CellUtils.GetIndex(i, j)].State = JudgeNextLife(i, j);
+                    }
                 }
-                catch (Exception e)
-                {
-                    tcs.SetException(e);
-                }
+
+                Cells = temp;
             });
         }
 
-        private void UpdateCells()
-        {
-            var temp = Cells;
-            for (var i = 0; i < CellUtils.CellSize; i++)
-            {
-                for (var j = 0; j < CellUtils.CellSize; j++)
-                {
-                    temp[CellUtils.GetIndex(i, j)].State = JudgeNextLife(i, j);
-                }
-            }
-
-            Cells = temp;
-        }
-
+        // ライフゲームのメイン処理
+        // 現世で生きていて且つ、周りの人が3 or 2なら、来世は生きる
+        // 現世で死んでいて且つ、周りの人が3なら、来世は生きる
+        // それ以外は死
         private int JudgeNextLife(int x, int y)
         {
             var neighborsCount = 0;
