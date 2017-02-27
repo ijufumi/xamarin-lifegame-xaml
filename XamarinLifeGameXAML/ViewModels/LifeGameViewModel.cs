@@ -75,16 +75,23 @@ namespace XamarinLifeGameXAML.ViewModels
             // UIスレッドからじゃないと、UIの更新ができないので
             Device.BeginInvokeOnMainThread(() =>
             {
-                var temp = (Cell[]) Cells.Clone();
+                var nextStemp = (Cell[]) Cells.Clone();
                 for (var i = 0; i < CellUtils.CellSize; i++)
                 {
                     for (var j = 0; j < CellUtils.CellSize; j++)
                     {
-                        temp[CellUtils.GetIndex(i, j)].State = JudgeNextLife(i, j);
+                        if (JudgeNextLife(i, j))
+                        {
+                            nextStemp[CellUtils.GetIndex(i, j)].ToLive();
+                        }
+                        else
+                        {
+                            nextStemp[CellUtils.GetIndex(i, j)].ToDead();
+                        }
                     }
                 }
 
-                Cells = temp;
+                Cells = nextStemp;
             });
         }
 
@@ -92,69 +99,69 @@ namespace XamarinLifeGameXAML.ViewModels
         // 現世で生きていて且つ、周りの人が3 or 2なら、来世は生きる
         // 現世で死んでいて且つ、周りの人が3なら、来世は生きる
         // それ以外は死
-        private int JudgeNextLife(int x, int y)
+        private bool JudgeNextLife(int x, int y)
         {
             var neighborsCount = 0;
 
             if (x > 0)
             {
-                if (Cells[CellUtils.GetIndex(x - 1, y)].State == 1)
+                if (Cells[CellUtils.GetIndex(x - 1, y)].IsLive)
                 {
                     neighborsCount++;
                 }
-                if (y > 0 && Cells[CellUtils.GetIndex(x - 1, y - 1)].State == 1)
+                if (y > 0 && Cells[CellUtils.GetIndex(x - 1, y - 1)].IsLive)
                 {
                     neighborsCount++;
                 }
-                if (y < CellUtils.CellSize - 1 && Cells[CellUtils.GetIndex(x - 1, y + 1)].State == 1)
+                if (y < CellUtils.CellSize - 1 && Cells[CellUtils.GetIndex(x - 1, y + 1)].IsLive)
                 {
                     neighborsCount++;
                 }
             }
             if (x < CellUtils.CellSize - 1)
             {
-                if (Cells[CellUtils.GetIndex(x + 1, y)].State == 1)
+                if (Cells[CellUtils.GetIndex(x + 1, y)].IsLive)
                 {
                     neighborsCount++;
                 }
-                if (y > 0 && Cells[CellUtils.GetIndex(x + 1, y - 1)].State == 1)
+                if (y > 0 && Cells[CellUtils.GetIndex(x + 1, y - 1)].IsLive)
                 {
                     neighborsCount++;
                 }
-                if (y < CellUtils.CellSize - 1 && Cells[CellUtils.GetIndex(x + 1, y + 1)].State == 1)
+                if (y < CellUtils.CellSize - 1 && Cells[CellUtils.GetIndex(x + 1, y + 1)].IsLive)
                 {
                     neighborsCount++;
                 }
             }
             if (y > 0)
             {
-                if (Cells[CellUtils.GetIndex(x, y - 1)].State == 1)
+                if (Cells[CellUtils.GetIndex(x, y - 1)].IsLive)
                 {
                     neighborsCount++;
                 }
             }
             if (y < CellUtils.CellSize - 1)
             {
-                if (Cells[CellUtils.GetIndex(x, y + 1)].State == 1)
+                if (Cells[CellUtils.GetIndex(x, y + 1)].IsLive)
                 {
                     neighborsCount++;
                 }
             }
-            var life = Cells[CellUtils.GetIndex(x, y)].State;
-            var newLife = 0;
+            var isLive = Cells[CellUtils.GetIndex(x, y)].IsLive;
+            var newLife = false;
 
-            if (life == 1)
+            if (isLive)
             {
                 if (neighborsCount == 3 || neighborsCount == 2)
                 {
-                    newLife = 1;
+                    newLife = true;
                 }
             }
             else
             {
                 if (neighborsCount == 3)
                 {
-                    newLife = 1;
+                    newLife = true;
                 }
             }
 

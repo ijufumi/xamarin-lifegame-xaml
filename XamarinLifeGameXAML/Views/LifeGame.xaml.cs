@@ -14,24 +14,24 @@ namespace XamarinLifeGameXAML.Views
             InitializeComponent();
 
 
-            var RowDefinitions = new RowDefinition[CellUtils.CellSize];
-            var RowCollections = new RowDefinitionCollection();
+            var rowDefinitions = new RowDefinition[CellUtils.CellSize];
+            var rowCollections = new RowDefinitionCollection();
             for (var i = 0; i < CellUtils.CellSize; i++)
             {
-                RowDefinitions[i] = new RowDefinition { Height = GridLength.Star};
-                RowCollections.Add(RowDefinitions[i]);
+                rowDefinitions[i] = new RowDefinition { Height = GridLength.Star};
+                rowCollections.Add(rowDefinitions[i]);
             }
 
-            var ColumnDefinitions = new ColumnDefinition[CellUtils.CellSize];
-            var ColumnCollections = new ColumnDefinitionCollection();
+            var columnDefinitions = new ColumnDefinition[CellUtils.CellSize];
+            var columnCollections = new ColumnDefinitionCollection();
             for (var i = 0; i < CellUtils.CellSize; i++)
             {
-                ColumnDefinitions[i] = new ColumnDefinition { Width = GridLength.Star };
-                ColumnCollections.Add(ColumnDefinitions[i]);
+                columnDefinitions[i] = new ColumnDefinition { Width = GridLength.Star };
+                columnCollections.Add(columnDefinitions[i]);
             }
 
-            CellGrid.RowDefinitions = RowCollections;
-            CellGrid.ColumnDefinitions = ColumnCollections;
+            CellGrid.RowDefinitions = rowCollections;
+            CellGrid.ColumnDefinitions = columnCollections;
             CellGrid.Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0);
 
             _cells = new Logic.Cell[CellUtils.CellSize * CellUtils.CellSize];
@@ -44,27 +44,25 @@ namespace XamarinLifeGameXAML.Views
                 {
                     var index = (j + i * CellUtils.CellSize);
                     _cells[index] = new Logic.Cell {
-                        State = 0,
                         IndexX = i,
                         IndexY = j,
                         Index =  index,
-                        // Text = index.ToString(),
                         FontSize = 20,
                         HorizontalTextAlignment = TextAlignment.Center,
                         VerticalTextAlignment = TextAlignment.Center,
                         GestureRecognizers = { tgr }
                     };
+                    _cells[index].ToDead();
                     CellGrid.Children.Add(_cells[index], i, j);
                 }
             }
 
-            var viewModel = (LifeGameViewModel) this.BindingContext;
+            var viewModel = (LifeGameViewModel) BindingContext;
             viewModel.Cells = _cells;
         }
 
         public void CellClicked(object sender, EventArgs e)
         {
-            var vm = (LifeGameViewModel) this.BindingContext;
             var cell = (Logic.Cell)sender;
 
             var index = cell.Index;

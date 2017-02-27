@@ -1,16 +1,13 @@
-﻿using System;
-using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
-using Xamarin.Forms.Platform;
+﻿using Xamarin.Forms;
 
 namespace XamarinLifeGameXAML.Logic
 {
     public class Cell : Label
     {
-        public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), (object) 0, BindingMode.Default, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
-        public static readonly BindableProperty IndexXProperty = BindableProperty.Create("IndexX", typeof (int), typeof (Cell), (object) 0, BindingMode.Default, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexXPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
-        public static readonly BindableProperty IndexYProperty = BindableProperty.Create("IndexY", typeof (int), typeof (Cell), (object) 0, BindingMode.Default, (BindableProperty.ValidateValueDelegate) null, new BindableProperty.BindingPropertyChangedDelegate(Cell.OnIndexYPropertyChanged), (BindableProperty.BindingPropertyChangingDelegate) null, (BindableProperty.CoerceValueDelegate) null, (BindableProperty.CreateDefaultValueDelegate) null);
+        public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnIndexPropertyChanged);
+        public static readonly BindableProperty IndexXProperty = BindableProperty.Create("IndexX", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnIndexXPropertyChanged);
+        public static readonly BindableProperty IndexYProperty = BindableProperty.Create("IndexY", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnIndexYPropertyChanged);
+        public static readonly BindableProperty StateProperty = BindableProperty.Create("State", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnStatePropertyChanged);
 
         public Cell()
         {
@@ -20,58 +17,71 @@ namespace XamarinLifeGameXAML.Logic
         {
             get
             {
-                return (int) this.GetValue(Cell.IndexProperty);
+                return (int) GetValue(IndexProperty);
             }
             set
             {
-                this.SetValue(Cell.IndexProperty, (object) value);
+                SetValue(IndexProperty, value);
             }
         }
 
         public int IndexY
         {
-            get;
-            set;
+            get
+            {
+                return (int) GetValue(IndexYProperty);
+            }
+            set
+            {
+                SetValue(IndexYProperty, value);
+            }
         }
 
         public int IndexX
         {
-            get;
-            set;
-        }
-
-        private int _state;
-        public int State
-        {
             get
             {
-                return _state;
+                return (int) GetValue(IndexXProperty);
             }
             set
             {
-                _state = value;
-                if (_state == 1)
-                {
-                    BackgroundColor = Color.Black;
-                    TextColor = Color.White;
-                }
-                else
-                {
-                    BackgroundColor = Color.White;
-                    TextColor = Color.Black;
-                }
+                SetValue(IndexXProperty, value);
             }
+        }
+
+        private int State
+        {
+            get
+            {
+                return (int) GetValue(StateProperty);
+            }
+            set
+            {
+                SetValue(StateProperty, value);
+            }
+        }
+
+        public bool IsLive => State == 1;
+
+        public void ToLive()
+        {
+            State = 1;
+        }
+
+        public void ToDead()
+        {
+            State = 0;
         }
 
         public void ChangeState()
         {
-            if (State == 0)
+            if (IsLive)
             {
-                State = 1;
+                ToDead();
             }
             else
             {
-                State = 0;
+                ToLive();
             }
         }
 
@@ -83,6 +93,20 @@ namespace XamarinLifeGameXAML.Logic
         }
         private static void OnIndexXPropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
+        }
+        private static void OnStatePropertyChanged(BindableObject bindable, object oldvalue, object newvalue)
+        {
+            var cell = (Cell) bindable;
+            if (cell.IsLive)
+            {
+                cell.BackgroundColor = Color.Black;
+                cell.TextColor = Color.White;
+            }
+            else
+            {
+                cell.BackgroundColor = Color.White;
+                cell.TextColor = Color.Black;
+            }
         }
     }
 }
