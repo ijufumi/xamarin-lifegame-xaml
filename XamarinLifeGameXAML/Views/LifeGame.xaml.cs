@@ -34,30 +34,38 @@ namespace XamarinLifeGameXAML.Views
             CellGrid.ColumnDefinitions = columnCollections;
             CellGrid.Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0);
 
+            var viewModel = (LifeGameViewModel) BindingContext;
             _cells = new Logic.Cell[CellUtils.CellSize * CellUtils.CellSize];
-            var tgr = new TapGestureRecognizer();
-            tgr.Tapped += CellClicked;
 
             for (var i = 0; i < CellUtils.CellSize; i++)
             {
                 for (var j = 0; j < CellUtils.CellSize; j++)
                 {
+
                     var index = (j + i * CellUtils.CellSize);
                     _cells[index] = new Logic.Cell {
                         IndexX = i,
                         IndexY = j,
                         Index =  index,
+                        MinimumHeightRequest = 20,
+                        MinimumWidthRequest = 20,
+                        Text = index.ToString(),
                         FontSize = 20,
                         HorizontalTextAlignment = TextAlignment.Center,
                         VerticalTextAlignment = TextAlignment.Center,
-                        GestureRecognizers = { tgr }
                     };
+
+                    var tgr = new TapGestureRecognizer();
+                    tgr.SetBinding(TapGestureRecognizer.CommandProperty, "CellClick");
+                    tgr.SetBinding(TapGestureRecognizer.CommandParameterProperty, index.ToString());
+
+                    _cells[index].GestureRecognizers.Add(tgr);
                     _cells[index].ToDead();
+
                     CellGrid.Children.Add(_cells[index], i, j);
                 }
             }
 
-            var viewModel = (LifeGameViewModel) BindingContext;
             viewModel.Cells = _cells;
         }
 

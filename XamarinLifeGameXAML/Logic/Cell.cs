@@ -11,6 +11,8 @@ namespace XamarinLifeGameXAML.Logic
 
         public Cell()
         {
+            BackgroundColor = Color.White;
+            TextColor = Color.Black;
         }
 
         public int Index
@@ -99,13 +101,13 @@ namespace XamarinLifeGameXAML.Logic
             var cell = (Cell) bindable;
             if (cell.IsLive)
             {
-                cell.BackgroundColor = Color.Black;
-                cell.TextColor = Color.White;
+                cell.BackgroundColor = Color.White;
+                cell.TextColor = Color.Black;
             }
             else
             {
-                cell.BackgroundColor = Color.White;
-                cell.TextColor = Color.Black;
+                cell.BackgroundColor = Color.Black;
+                cell.TextColor = Color.White;
             }
         }
     }

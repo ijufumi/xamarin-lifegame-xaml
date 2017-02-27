@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Windows.Input;
 using Prism.Commands;
 using Prism.Mvvm;
 using Xamarin.Forms;
@@ -27,7 +29,10 @@ namespace XamarinLifeGameXAML.ViewModels
                 )
                 .ObservesProperty(() => IsExecuted);
 
-
+            // パラメータを受け取りたいので、FormsのCommandを利用
+            CellClick = new Command(
+                    async () => await CellClicked(),
+                    () => !IsExecuted);
         }
 
         private bool isExecuted;
@@ -44,7 +49,14 @@ namespace XamarinLifeGameXAML.ViewModels
 
         public DelegateCommand StopCommand { get; }
 
+        public ICommand CellClick { get; }
+
         public Cell[] Cells { get; set; }
+
+        public async Task CellClicked(object parameter = null)
+        {
+            Debug.WriteLine(parameter);
+        }
 
         // START/STOPボタンから実行されるメソッド。
         private async Task ControlGame()
