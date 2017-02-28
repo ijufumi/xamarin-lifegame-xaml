@@ -9,6 +9,7 @@ namespace XamarinLifeGameXAML.Views
     public partial class LifeGame : ContentPage
     {
         private readonly Logic.Cell[] _cells;
+
         public LifeGame()
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace XamarinLifeGameXAML.Views
             var rowCollections = new RowDefinitionCollection();
             for (var i = 0; i < CellUtils.CellSize; i++)
             {
-                rowDefinitions[i] = new RowDefinition { Height = GridLength.Star};
+                rowDefinitions[i] = new RowDefinition {Height = GridLength.Star};
                 rowCollections.Add(rowDefinitions[i]);
             }
 
@@ -26,7 +27,7 @@ namespace XamarinLifeGameXAML.Views
             var columnCollections = new ColumnDefinitionCollection();
             for (var i = 0; i < CellUtils.CellSize; i++)
             {
-                columnDefinitions[i] = new ColumnDefinition { Width = GridLength.Star };
+                columnDefinitions[i] = new ColumnDefinition {Width = GridLength.Star};
                 columnCollections.Add(columnDefinitions[i]);
             }
 
@@ -41,12 +42,12 @@ namespace XamarinLifeGameXAML.Views
             {
                 for (var j = 0; j < CellUtils.CellSize; j++)
                 {
-
                     var index = (j + i * CellUtils.CellSize);
-                    _cells[index] = new Logic.Cell {
+                    _cells[index] = new Logic.Cell
+                    {
                         IndexX = i,
                         IndexY = j,
-                        Index =  index,
+                        Index = index,
                         MinimumHeightRequest = 20,
                         MinimumWidthRequest = 20,
                         Text = index.ToString(),
@@ -55,11 +56,12 @@ namespace XamarinLifeGameXAML.Views
                         VerticalTextAlignment = TextAlignment.Center,
                     };
 
-                    var tgr = new TapGestureRecognizer();
-                    tgr.SetBinding(TapGestureRecognizer.CommandProperty, "CellClick");
-                    tgr.SetBinding(TapGestureRecognizer.CommandParameterProperty, index.ToString());
-
-                    _cells[index].GestureRecognizers.Add(tgr);
+                    _cells[index]
+                        .GestureRecognizers.Add(new TapGestureRecognizer
+                        {
+                            Command = viewModel.CellClick,
+                            CommandParameter = index
+                        });
                     _cells[index].ToDead();
 
                     CellGrid.Children.Add(_cells[index], i, j);
@@ -71,7 +73,7 @@ namespace XamarinLifeGameXAML.Views
 
         public void CellClicked(object sender, EventArgs e)
         {
-            var cell = (Logic.Cell)sender;
+            var cell = (Logic.Cell) sender;
 
             var index = cell.Index;
             _cells[index].ChangeState();
