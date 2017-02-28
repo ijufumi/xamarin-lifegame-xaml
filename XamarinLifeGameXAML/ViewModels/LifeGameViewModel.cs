@@ -28,7 +28,8 @@ namespace XamarinLifeGameXAML.ViewModels
 
             CellClick = new DelegateCommand<object>(
                     async T => await CellClicked(T),
-                    T => !IsExecuted);
+                    T => !IsExecuted)
+                .ObservesProperty(() => IsExecuted);
         }
 
         private bool isExecuted;
