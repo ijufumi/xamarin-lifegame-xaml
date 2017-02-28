@@ -1,18 +1,20 @@
 ﻿using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace XamarinLifeGameXAML.Logic
 {
     public class Cell : Label
     {
-        public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnIndexPropertyChanged);
-        public static readonly BindableProperty IndexXProperty = BindableProperty.Create("IndexX", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnIndexXPropertyChanged);
-        public static readonly BindableProperty IndexYProperty = BindableProperty.Create("IndexY", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnIndexYPropertyChanged);
-        public static readonly BindableProperty StateProperty = BindableProperty.Create("State", typeof (int), typeof (Cell), 0, BindingMode.Default, null, OnStatePropertyChanged);
+        public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), 0, BindingMode.TwoWay, null, OnIndexPropertyChanged);
+        public static readonly BindableProperty IndexXProperty = BindableProperty.Create("IndexX", typeof (int), typeof (Cell), 0, BindingMode.TwoWay, null, OnIndexXPropertyChanged);
+        public static readonly BindableProperty IndexYProperty = BindableProperty.Create("IndexY", typeof (int), typeof (Cell), 0, BindingMode.TwoWay, null, OnIndexYPropertyChanged);
+        public static readonly BindableProperty StateProperty = BindableProperty.Create("State", typeof (int), typeof (Cell), 1, BindingMode.TwoWay, null, OnStatePropertyChanged);
+
+        private const int LIVE_VALUE = 1;
+        private const int DEAD_VALUE = 0;
 
         public Cell()
         {
-            BackgroundColor = Color.White;
-            TextColor = Color.Black;
         }
 
         public int Index
@@ -63,16 +65,16 @@ namespace XamarinLifeGameXAML.Logic
             }
         }
 
-        public bool IsLive => State == 1;
+        public bool IsLive => State == LIVE_VALUE;
 
         public void ToLive()
         {
-            State = 1;
+            State = LIVE_VALUE;
         }
 
         public void ToDead()
         {
-            State = 0;
+            State = DEAD_VALUE;
         }
 
         public void ChangeState()
