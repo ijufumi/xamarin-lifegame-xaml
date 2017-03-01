@@ -26,7 +26,7 @@ namespace XamarinLifeGameXAML.ViewModels
                 )
                 .ObservesProperty(() => IsExecuted);
 
-            CellClick = new DelegateCommand<object>(
+            CellClick = new DelegateCommand<int?>(
                     async T => await CellClicked(T),
                     T => !IsExecuted)
                 .ObservesProperty(() => IsExecuted);
@@ -46,15 +46,18 @@ namespace XamarinLifeGameXAML.ViewModels
 
         public DelegateCommand StopCommand { get; }
 
-        public DelegateCommand<object> CellClick { get; }
+        public DelegateCommand<int?> CellClick { get; }
 
         public Cell[] Cells { get; set; }
 
-        public async Task CellClicked(object parameter)
+        public async Task CellClicked(int? parameter)
         {
-            Cells[(int)parameter].ChangeState();
-
-            Debug.WriteLine("CellClicked [" + parameter + "], IsLive[" + Cells[(int)parameter].IsLive + "]");
+            if (parameter != null)
+            {
+                var index = (int) parameter;
+                Cells[index].ChangeState();
+                Debug.WriteLine("CellClicked [" + parameter + "], IsLive[" + Cells[index].IsLive + "]");
+            }
         }
 
         // START/STOPボタンから実行されるメソッド。
