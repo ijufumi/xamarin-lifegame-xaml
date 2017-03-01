@@ -52,9 +52,11 @@ namespace XamarinLifeGameXAML.ViewModels
 
         public async Task CellClicked(int? parameter)
         {
-            if (parameter != null)
+
+
+            if (parameter.HasValue)
             {
-                var index = (int) parameter;
+                var index = parameter.Value;
                 Cells[index].ChangeState();
                 Debug.WriteLine("CellClicked [" + parameter + "], IsLive[" + Cells[index].IsLive + "]");
             }
