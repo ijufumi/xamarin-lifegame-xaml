@@ -52,8 +52,6 @@ namespace XamarinLifeGameXAML.ViewModels
 
         public async Task CellClicked(int? parameter)
         {
-
-
             if (parameter.HasValue)
             {
                 var index = parameter.Value;
