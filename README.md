@@ -32,3 +32,10 @@
 `DelegateCommand` は、型パラメータのあり/なしでちょっとだけ書き方が変わり、型パラメータありの場合は `CommandParameter` での値の受け渡しが可能でした。<br>
 ただ、値の受け渡し時に指定する型は、`Nullable` （Null許容）じゃないといけなくて、<br>
 `int` を指定したら起動時にエラーになり、`int?` に変更すると大丈夫でした。
+
+### 参考にしたもの
+ | ページ | 内容|
+ | --- | --- |
+ | [chomado/Xamalist](https://github.com/chomado/Xamalist) | Prismの実装（特にDelegateCommand） |
+ | [nuits.jp blog](http://www.nuits.jp/) | Prism関連のトラブルシューティング |
+ | [かずきのBlog@hatena](http://blog.okazuki.jp/) | XAMLの実装 |
