@@ -10,8 +10,8 @@ namespace XamarinLifeGameXAML.Logic
         public static readonly BindableProperty IndexYProperty = BindableProperty.Create("IndexY", typeof (int), typeof (Cell), 0, BindingMode.TwoWay, null, OnIndexYPropertyChanged);
         public static readonly BindableProperty StateProperty = BindableProperty.Create("State", typeof (int), typeof (Cell), 1, BindingMode.TwoWay, null, OnStatePropertyChanged);
 
-        private const int LIVE_VALUE = 1;
-        private const int DEAD_VALUE = 0;
+        private const int LiveValue = 1;
+        private const int DeadValue = 0;
 
         public Cell()
         {
@@ -65,16 +65,16 @@ namespace XamarinLifeGameXAML.Logic
             }
         }
 
-        public bool IsLive => State == LIVE_VALUE;
+        public bool IsLive => State == LiveValue;
 
         public void ToLive()
         {
-            State = LIVE_VALUE;
+            State = LiveValue;
         }
 
         public void ToDead()
         {
-            State = DEAD_VALUE;
+            State = DeadValue;
         }
 
         public void ChangeState()
