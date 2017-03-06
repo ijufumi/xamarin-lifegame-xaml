@@ -14,12 +14,13 @@ namespace XamarinLifeGameXAML.Views
         {
             InitializeComponent();
 
+            Title.FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label));
 
             var rowDefinitions = new RowDefinition[CellUtils.CellSize];
             var rowCollections = new RowDefinitionCollection();
             for (var i = 0; i < CellUtils.CellSize; i++)
             {
-                rowDefinitions[i] = new RowDefinition {Height = GridLength.Star};
+                rowDefinitions[i] = new RowDefinition {Height = 40};
                 rowCollections.Add(rowDefinitions[i]);
             }
 
@@ -27,13 +28,12 @@ namespace XamarinLifeGameXAML.Views
             var columnCollections = new ColumnDefinitionCollection();
             for (var i = 0; i < CellUtils.CellSize; i++)
             {
-                columnDefinitions[i] = new ColumnDefinition {Width = GridLength.Star};
+                columnDefinitions[i] = new ColumnDefinition {Width = 40};
                 columnCollections.Add(columnDefinitions[i]);
             }
 
             CellGrid.RowDefinitions = rowCollections;
             CellGrid.ColumnDefinitions = columnCollections;
-            CellGrid.Padding = new Thickness(5, Device.OnPlatform(20, 0, 0), 5, 0);
 
             var viewModel = (LifeGameViewModel) BindingContext;
             _cells = new Logic.Cell[CellUtils.CellSize * CellUtils.CellSize];
@@ -50,7 +50,7 @@ namespace XamarinLifeGameXAML.Views
                         Index = index,
                         MinimumHeightRequest = 20,
                         MinimumWidthRequest = 20,
-                        Text = index.ToString(),
+                        // Text = index.ToString(),
                         FontSize = 20,
                         HorizontalTextAlignment = TextAlignment.Center,
                         VerticalTextAlignment = TextAlignment.Center,

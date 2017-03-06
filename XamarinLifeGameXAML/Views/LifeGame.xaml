@@ -7,12 +7,16 @@
 		x:Class="XamarinLifeGameXAML.Views.LifeGame"
 		Title="LifeGame powered by Xamarin.">
 
-    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <Label Text="Life Game" BackgroundColor="White" FontSize="30" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
-        <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Gray" x:Name="CellGrid"/>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <Button Text="START" WidthRequest="100" BackgroundColor="Blue" Command="{Binding StartCommand}"/>
-            <Button Text="STOP" WidthRequest="100" BackgroundColor="Red" Command="{Binding StopCommand}"/>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" Margin="0, 10, 0, 0">
+            <Label x:Name="Title" Text="Life Game" BackgroundColor="White"
+                VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                Margin="0, 5, 0, 0"/>
+            <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Gray" x:Name="CellGrid" Padding="5, 5, 5, 5"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="START" WidthRequest="100" BackgroundColor="Blue" Command="{Binding StartCommand}"/>
+                <Button Text="STOP" WidthRequest="100" BackgroundColor="Red" Command="{Binding StopCommand}"/>
+            </StackLayout>
         </StackLayout>
-    </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
