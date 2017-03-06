@@ -22,7 +22,7 @@ namespace XamarinLifeGameXAML.Logic
             return Tuple.Create(x, y);
         }
 
-        public static int CellSize => 9;
+        public static int CellSize => 7;
 
         public static int ArraySize => CellSize * CellSize;
     }
