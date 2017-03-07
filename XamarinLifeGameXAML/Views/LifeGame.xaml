@@ -16,12 +16,12 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                 <Image Source="start_button.png">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding StartCommand}"/>
+                        <TapGestureRecognizer Command="{Binding StartCommand}" CommandParameter="start"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Image Source="stop_button.png">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding StopCommand}"/>
+                        <TapGestureRecognizer Command="{Binding StopCommand}" CommandParameter="stop"/>
                     </Image.GestureRecognizers>
                 </Image>
 <!--                <Button Text="START" WidthRequest="100" BackgroundColor="Blue" Command="{Binding StartCommand}"/>-->

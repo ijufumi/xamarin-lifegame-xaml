@@ -14,15 +14,15 @@ namespace XamarinLifeGameXAML.ViewModels
 
         public LifeGameViewModel()
         {
-            StartCommand = new DelegateCommand(
-                    async () => await ControlGame(),
-                    () => !IsExecuted
+            StartCommand = new DelegateCommand<string>(
+                    async T => await ControlGame(T),
+                    T => !IsExecuted
             )
             .ObservesProperty(() => IsExecuted);
 
-            StopCommand = new DelegateCommand(
-                    async () => await ControlGame(),
-                    () => IsExecuted
+            StopCommand = new DelegateCommand<string>(
+                    async T => await ControlGame(T),
+                    T => IsExecuted
                 )
                 .ObservesProperty(() => IsExecuted);
 
@@ -42,9 +42,9 @@ namespace XamarinLifeGameXAML.ViewModels
             set { SetProperty(ref isExecuted, value); }
         }
 
-        public DelegateCommand StartCommand { get; }
+        public DelegateCommand<string> StartCommand { get; }
 
-        public DelegateCommand StopCommand { get; }
+        public DelegateCommand<string> StopCommand { get; }
 
         public DelegateCommand<int?> CellClick { get; }
 
@@ -61,10 +61,12 @@ namespace XamarinLifeGameXAML.ViewModels
         }
 
         // START/STOPボタンから実行されるメソッド。
-        private async Task ControlGame()
+        private async Task ControlGame(string buttonType)
         {
-            Debug.WriteLine("Call ControlGame : " + IsExecuted);
-            if (!IsExecuted)
+            Debug.WriteLine("Call ControlGame : " + buttonType);
+
+            // TODO:
+            if (buttonType.Equals("start"))
             {
                 IsExecuted = true;
                 // awaitすると処理を待つので、asyncで処理を実行する
@@ -89,23 +91,23 @@ namespace XamarinLifeGameXAML.ViewModels
             // UIスレッドからじゃないと、UIの更新ができないので
             Device.BeginInvokeOnMainThread(() =>
             {
-                var nextStemp = (Cell[]) Cells.Clone();
+                var nextStep = (Cell[]) Cells.Clone();
                 for (var i = 0; i < CellUtils.CellSize; i++)
                 {
                     for (var j = 0; j < CellUtils.CellSize; j++)
                     {
                         if (JudgeNextLife(i, j))
                         {
-                            nextStemp[CellUtils.GetIndex(i, j)].ToLive();
+                            nextStep[CellUtils.GetIndex(i, j)].ToLive();
                         }
                         else
                         {
-                            nextStemp[CellUtils.GetIndex(i, j)].ToDead();
+                            nextStep[CellUtils.GetIndex(i, j)].ToDead();
                         }
                     }
                 }
 
-                Cells = nextStemp;
+                Cells = nextStep;
             });
         }
 
