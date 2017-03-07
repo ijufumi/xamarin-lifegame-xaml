@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage 
 		xmlns="http://xamarin.com/schemas/2014/forms" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
@@ -8,14 +8,24 @@
 		Title="LifeGame powered by Xamarin.">
 
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand" Margin="0, 10, 0, 0">
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Center" Margin="0, 0, 0, 0">
             <Label x:Name="Title" Text="Life Game" BackgroundColor="White"
                 VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
-                Margin="0, 5, 0, 0"/>
-            <Grid RowSpacing="1" ColumnSpacing="1" BackgroundColor="Gray" x:Name="CellGrid" Padding="5, 5, 5, 5"/>
+                Margin="0, 20, 0, 0"/>
+            <Grid RowSpacing="1" HorizontalOptions="Center" ColumnSpacing="1" BackgroundColor="Gray" x:Name="CellGrid" Padding="5, 5, 5, 5"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Button Text="START" WidthRequest="100" BackgroundColor="Blue" Command="{Binding StartCommand}"/>
-                <Button Text="STOP" WidthRequest="100" BackgroundColor="Red" Command="{Binding StopCommand}"/>
+                <Image Source="start_button.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding StartCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="stop_button.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding StopCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+<!--                <Button Text="START" WidthRequest="100" BackgroundColor="Blue" Command="{Binding StartCommand}"/>-->
+<!--                <Button Text="STOP" WidthRequest="100" BackgroundColor="Red" Command="{Binding StopCommand}"/>-->
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
