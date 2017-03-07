@@ -34,8 +34,8 @@ Prism.Unity.Forms | 6.2.0
 `int` を指定したら起動時にエラーになり、`int?` に変更すると大丈夫でした。
 
 ### 参考にしたもの
- | ページ | 内容|
- | --- | --- |
- | [chomado/Xamalist](https://github.com/chomado/Xamalist) | Prismの実装（特にDelegateCommand） |
- | [nuits.jp blog](http://www.nuits.jp/) | Prism関連のトラブルシューティング |
- | [かずきのBlog@hatena](http://blog.okazuki.jp/) | XAMLの実装 |
+ページ | 内容
+--- | --- 
+[chomado/Xamalist](https://github.com/chomado/Xamalist) | Prismの実装（特にDelegateCommand） 
+[nuits.jp blog](http://www.nuits.jp/) | Prism関連のトラブルシューティング 
+[かずきのBlog@hatena](http://blog.okazuki.jp/) | XAMLの実装 
