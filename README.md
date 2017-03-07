@@ -3,12 +3,12 @@
 今回は `XAML` と `Prism.Forms` を使っています
 
 ### 各種バージョン
- | ライブラリ | バージョン |
- | --------- | -------- |
- | Xamarin.Forms | 2.3.3.180 |
- | Prism.Core | 6.2.0 |
- | Prism.Forms | 6.2.0 |
- | Prism.Unity.Forms | 6.2.0 |
+ライブラリ | バージョン 
+--- | --- |
+Xamarin.Forms | 2.3.3.180 
+Prism.Core | 6.2.0 
+Prism.Forms | 6.2.0 
+Prism.Unity.Forms | 6.2.0 
 
 ### 前回との変更点
 #### ViewにXAMLを使った
@@ -34,8 +34,8 @@
 `int` を指定したら起動時にエラーになり、`int?` に変更すると大丈夫でした。
 
 ### 参考にしたもの
- | ページ | 内容|
- | --- | --- |
- | [chomado/Xamalist](https://github.com/chomado/Xamalist) | Prismの実装（特にDelegateCommand） |
- | [nuits.jp blog](http://www.nuits.jp/) | Prism関連のトラブルシューティング |
- | [かずきのBlog@hatena](http://blog.okazuki.jp/) | XAMLの実装 |
+ページ | 内容
+--- | --- 
+[chomado/Xamalist](https://github.com/chomado/Xamalist) | Prismの実装（特にDelegateCommand） 
+[nuits.jp blog](http://www.nuits.jp/) | Prism関連のトラブルシューティング 
+[かずきのBlog@hatena](http://blog.okazuki.jp/) | XAMLの実装 
