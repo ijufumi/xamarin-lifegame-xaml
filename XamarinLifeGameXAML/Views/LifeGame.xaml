@@ -14,18 +14,16 @@
                 Margin="0, 20, 0, 0"/>
             <Grid RowSpacing="1" HorizontalOptions="Center" ColumnSpacing="1" BackgroundColor="Gray" x:Name="CellGrid" Padding="5, 5, 5, 5"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Image Source="start_button.png">
+                <Image Source="{Binding StartButtonImage}">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding StartCommand}" CommandParameter="start"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image Source="stop_button.png">
+                <Image Source="{Binding StopButtonImage}">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding StopCommand}" CommandParameter="stop"/>
                     </Image.GestureRecognizers>
                 </Image>
-<!--                <Button Text="START" WidthRequest="100" BackgroundColor="Blue" Command="{Binding StartCommand}"/>-->
-<!--                <Button Text="STOP" WidthRequest="100" BackgroundColor="Red" Command="{Binding StopCommand}"/>-->
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

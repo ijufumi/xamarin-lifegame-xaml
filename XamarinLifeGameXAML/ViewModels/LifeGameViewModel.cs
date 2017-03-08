@@ -1,6 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Diagnostics;
+using System.Linq;
 using Prism.Commands;
 using Prism.Mvvm;
 using Xamarin.Forms;
@@ -16,20 +16,31 @@ namespace XamarinLifeGameXAML.ViewModels
         {
             StartCommand = new DelegateCommand<string>(
                     async T => await ControlGame(T),
-                    T => !IsExecuted
+                    T => CanStart
             )
-            .ObservesProperty(() => IsExecuted);
+            .ObservesProperty(() => CanStart);
 
             StopCommand = new DelegateCommand<string>(
                     async T => await ControlGame(T),
-                    T => IsExecuted
+                    T => CanStop
                 )
-                .ObservesProperty(() => IsExecuted);
+                .ObservesProperty(() => CanStop);
 
             CellClick = new DelegateCommand<int?>(
                     async T => await CellClicked(T),
-                    T => !IsExecuted)
-                .ObservesProperty(() => IsExecuted);
+                    T => CanCellClick)
+                .ObservesProperty(() => CanCellClick);
+
+            IsExecuted = false;
+        }
+
+        public bool CanStart => !IsExecuted && HasLiveCells();
+        public bool CanStop => IsExecuted;
+        public bool CanCellClick => !IsExecuted;
+
+        public bool HasLiveCells()
+        {
+            return Cells.FirstOrDefault(c => c.IsLive) != null;
         }
 
         private bool isExecuted;
@@ -39,7 +50,20 @@ namespace XamarinLifeGameXAML.ViewModels
         public bool IsExecuted
         {
             get { return isExecuted; }
-            set { SetProperty(ref isExecuted, value); }
+            set
+            {
+                if (value)
+                {
+                    StartButtonImage = ImageSource.FromFile("start_button_disabled.png");
+                    StopButtonImage = ImageSource.FromFile("stop_button.png");
+                }
+                else
+                {
+                    StartButtonImage = ImageSource.FromFile("start_button.png");
+                    StopButtonImage = ImageSource.FromFile("stop_button_disabled.png");
+                }
+                SetProperty(ref isExecuted, value);
+            }
         }
 
         public DelegateCommand<string> StartCommand { get; }
@@ -49,6 +73,32 @@ namespace XamarinLifeGameXAML.ViewModels
         public DelegateCommand<int?> CellClick { get; }
 
         public Cell[] Cells { get; set; }
+
+        private ImageSource _startButtonImage;
+        public ImageSource StartButtonImage
+        {
+            get
+            {
+                return _startButtonImage;
+            }
+            private set
+            {
+                SetProperty(ref _startButtonImage, value);
+            }
+        }
+
+        private ImageSource _stopButtonImage;
+        public ImageSource StopButtonImage
+        {
+            get
+            {
+                return _stopButtonImage;
+            }
+            private set
+            {
+                SetProperty(ref _stopButtonImage, value);
+            }
+        }
 
         public async Task CellClicked(int? parameter)
         {
