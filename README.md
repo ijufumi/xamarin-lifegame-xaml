@@ -3,12 +3,12 @@
 今回は `XAML` と `Prism.Forms` を使っています
 
 ### 各種バージョン
-ライブラリ | バージョン 
+ライブラリ | バージョン
 --- | --- |
-Xamarin.Forms | 2.3.3.180 
-Prism.Core | 6.2.0 
-Prism.Forms | 6.2.0 
-Prism.Unity.Forms | 6.2.0 
+Xamarin.Forms | 2.3.3.180
+Prism.Core | 6.2.0
+Prism.Forms | 6.2.0
+Prism.Unity.Forms | 6.2.0
 
 ### 前回との変更点
 #### ViewにXAMLを使った
@@ -21,6 +21,10 @@ Prism.Unity.Forms | 6.2.0
 #### PrismでMVVM
 `Button` や `Cell` のイベントハンドラの作成や、ライフゲームの処理の部分を `ViewModel` に記述しました。<br>
 イベントハンドラは、`DelegateCommand` を用いることで、クリックできる/できない状態を制御し、より操作しやすいように変更できました。<br>
+`Button` は後から `Image` に変更しました。
+`Image` はそのままだとクリックできる時とできない時で見た目が変わらないので、状態によって表示するファイルを変更することで<br>
+クリック可能なときが分かるようにしました。<br>
+`Prism` の `BindableBase` にある `SetProperty` を使うことで、 `ViewModel` 側の変更を `View` に通知することができました。
 
 ### 得られたこと
 #### XAMLとコードビハインドの共存の重要性
@@ -35,7 +39,7 @@ Prism.Unity.Forms | 6.2.0
 
 ### 参考にしたもの
 ページ | 内容
---- | --- 
-[chomado/Xamalist](https://github.com/chomado/Xamalist) | Prismの実装（特にDelegateCommand） 
-[nuits.jp blog](http://www.nuits.jp/) | Prism関連のトラブルシューティング 
-[かずきのBlog@hatena](http://blog.okazuki.jp/) | XAMLの実装 
+--- | ---
+[chomado/Xamalist](https://github.com/chomado/Xamalist) | Prismの実装（特にDelegateCommand）
+[nuits.jp blog](http://www.nuits.jp/) | Prism関連のトラブルシューティング
+[かずきのBlog@hatena](http://blog.okazuki.jp/) | XAMLの実装
