@@ -38,20 +38,21 @@ namespace XamarinLifeGameXAML.ViewModels
         public bool CanStop => IsExecuted;
         public bool CanCellClick => !IsExecuted;
 
+        // 生きているセルが1つでも存在しないと、スタートできないようにするためのもの
         public bool HasLiveCells()
         {
             return Cells.FirstOrDefault(c => c.IsLive) != null;
         }
 
-        private bool isExecuted;
+        private bool _isExecuted;
 
-        // DelegateCommandでは、プロパティじゃないとエラーで落ちるので、
-        // 単純なものでも要プロパティ。
         public bool IsExecuted
         {
-            get { return isExecuted; }
+            get { return _isExecuted; }
             set
             {
+                // 実行状態によって、ボタンの画像を差し替える
+                // このことによって、ボタンが押せるのか押せないのか分かるようになる
                 if (value)
                 {
                     StartButtonImage = ImageSource.FromFile("start_button_disabled.png");
@@ -62,7 +63,7 @@ namespace XamarinLifeGameXAML.ViewModels
                     StartButtonImage = ImageSource.FromFile("start_button.png");
                     StopButtonImage = ImageSource.FromFile("stop_button_disabled.png");
                 }
-                SetProperty(ref isExecuted, value);
+                SetProperty(ref _isExecuted, value);
             }
         }
 
