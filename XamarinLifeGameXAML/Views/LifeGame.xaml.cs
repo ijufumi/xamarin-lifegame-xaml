@@ -48,12 +48,7 @@ namespace XamarinLifeGameXAML.Views
                         IndexX = i,
                         IndexY = j,
                         Index = index,
-                        MinimumHeightRequest = 20,
-                        MinimumWidthRequest = 20,
                         // Text = index.ToString(),
-                        FontSize = 20,
-                        HorizontalTextAlignment = TextAlignment.Center,
-                        VerticalTextAlignment = TextAlignment.Center,
                     };
 
                     _cells[index]

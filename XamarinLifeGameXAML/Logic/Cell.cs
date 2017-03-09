@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace XamarinLifeGameXAML.Logic
 {
-    public class Cell : Label
+    public class Cell : AbsoluteLayout
     {
         public static readonly BindableProperty IndexProperty = BindableProperty.Create("Index", typeof (int), typeof (Cell), 0, BindingMode.TwoWay, null, OnIndexPropertyChanged);
         public static readonly BindableProperty IndexXProperty = BindableProperty.Create("IndexX", typeof (int), typeof (Cell), 0, BindingMode.TwoWay, null, OnIndexXPropertyChanged);
@@ -15,6 +15,18 @@ namespace XamarinLifeGameXAML.Logic
 
         public Cell()
         {
+            var label = new Label
+            {
+                FontSize = 20,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center,
+            };
+
+            SetLayoutFlags(label, AbsoluteLayoutFlags.PositionProportional);
+            SetLayoutBounds(label, new Rectangle(0, 0, 40, 40));
+
+            Children.Add(label);
+            BackgroundColor = Color.Aqua;
         }
 
         public int Index
@@ -103,13 +115,11 @@ namespace XamarinLifeGameXAML.Logic
             var cell = (Cell) bindable;
             if (cell.IsLive)
             {
-                cell.BackgroundColor = Color.White;
-                cell.TextColor = Color.Black;
+                cell.Children[0].BackgroundColor = Color.White;
             }
             else
             {
-                cell.BackgroundColor = Color.Black;
-                cell.TextColor = Color.White;
+                cell.Children[0].BackgroundColor = Color.Black;
             }
         }
     }
