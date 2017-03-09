@@ -26,7 +26,6 @@ namespace XamarinLifeGameXAML.Logic
             SetLayoutBounds(label, new Rectangle(0, 0, 40, 40));
 
             Children.Add(label);
-            BackgroundColor = Color.Aqua;
         }
 
         public int Index
