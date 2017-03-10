@@ -6,9 +6,9 @@
 ライブラリ | バージョン
 --- | --- |
 Xamarin.Forms | 2.3.3.180
-Prism.Core | 6.2.0
-Prism.Forms | 6.2.0
-Prism.Unity.Forms | 6.2.0
+Prism.Core | 6.3.0-pre2
+Prism.Forms | 6.3.0-pre2
+Prism.Unity.Forms | 6.3.0-pre2
 
 ### 前回との変更点
 #### ViewにXAMLを使った
