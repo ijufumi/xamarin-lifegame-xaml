@@ -15,19 +15,19 @@ namespace XamarinLifeGameXAML.ViewModels
         public LifeGameViewModel()
         {
             StartCommand = new DelegateCommand<string>(
-                    async T => await ControlGame(T),
+                    async T => await ControlGameAsync(T),
                     T => CanStart
             )
             .ObservesProperty(() => CanStart);
 
             StopCommand = new DelegateCommand<string>(
-                    async T => await ControlGame(T),
+                    async T => await ControlGameAsync(T),
                     T => CanStop
                 )
                 .ObservesProperty(() => CanStop);
 
             CellClick = new DelegateCommand<int?>(
-                    async T => await CellClicked(T),
+                    async T => await CellClickedAsync(T),
                     T => CanCellClick)
                 .ObservesProperty(() => CanCellClick);
 
@@ -101,20 +101,20 @@ namespace XamarinLifeGameXAML.ViewModels
             }
         }
 
-        public async Task CellClicked(int? parameter)
+        public async Task CellClickedAsync(int? parameter)
         {
             if (parameter.HasValue)
             {
                 var index = parameter.Value;
                 Cells[index].ChangeState();
-                Debug.WriteLine("CellClicked [" + parameter + "], IsLive[" + Cells[index].IsLive + "]");
+                Debug.WriteLine("CellClickedAsync [" + parameter + "], IsLive[" + Cells[index].IsLive + "]");
             }
         }
 
         // START/STOPボタンから実行されるメソッド。
-        private async Task ControlGame(string buttonType)
+        private async Task ControlGameAsync(string buttonType)
         {
-            Debug.WriteLine("Call ControlGame : " + buttonType);
+            Debug.WriteLine("Call ControlGameAsync : " + buttonType);
 
             // TODO:
             if (buttonType.Equals("start"))
