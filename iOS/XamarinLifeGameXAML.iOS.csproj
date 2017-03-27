@@ -92,22 +92,22 @@
       <HintPath>..\packages\Unity.4.0.1\lib\portable-net45+wp80+win8+wpa81+MonoAndroid10+MonoTouch10\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Prism, Version=6.3.0.0, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59">
-      <HintPath>..\packages\Prism.Core.6.3.0-pre2\lib\Xamarin.iOS10\Prism.dll</HintPath>
+      <HintPath>..\packages\Prism.Core.6.3.0\lib\Xamarin.iOS10\Prism.dll</HintPath>
     </Reference>
     <Reference Include="Prism.Forms, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Prism.Forms.6.3.0-pre2\lib\Xamarin.iOS1.0\Prism.Forms.dll</HintPath>
+      <HintPath>..\packages\Prism.Forms.6.3.0\lib\Xamarin.iOS1.0\Prism.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Prism.Unity.Forms, Version=6.3.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Prism.Unity.Forms.6.3.0-pre2\lib\Xamarin.iOS1.0\Prism.Unity.Forms.dll</HintPath>
+      <HintPath>..\packages\Prism.Unity.Forms.6.3.0\lib\Xamarin.iOS1.0\Prism.Unity.Forms.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp, Version=1.56.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
-      <HintPath>..\packages\SkiaSharp.1.56.1\lib\XamariniOS\SkiaSharp.dll</HintPath>
+      <HintPath>..\packages\SkiaSharp.1.56.2\lib\XamariniOS\SkiaSharp.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp.Views.Forms, Version=1.56.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\SkiaSharp.Views.Forms.1.56.1\lib\XamariniOS\SkiaSharp.Views.Forms.dll</HintPath>
+      <HintPath>..\packages\SkiaSharp.Views.Forms.1.56.2\lib\XamariniOS\SkiaSharp.Views.Forms.dll</HintPath>
     </Reference>
     <Reference Include="SkiaSharp.Views.iOS, Version=1.56.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
-      <HintPath>..\packages\SkiaSharp.Views.1.56.1\lib\XamariniOS\SkiaSharp.Views.iOS.dll</HintPath>
+      <HintPath>..\packages\SkiaSharp.Views.1.56.2\lib\XamariniOS\SkiaSharp.Views.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
